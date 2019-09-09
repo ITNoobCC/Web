@@ -111,6 +111,9 @@ body {
 	background-color:#DEF4FF;
 }
 
-.elastic div.hide{
+.SearchCard.hide{
+	display: none;
+}
+.SearchCard.large.hide {
 	display: none;
 }
