@@ -111,9 +111,10 @@ body {
 	background-color:#DEF4FF;
 }
 
-.SearchCard.hide{
+.card.large.hide {
 	display: none;
 }
-.SearchCard.large.hide {
+
+.card.hide{
 	display: none;
 }

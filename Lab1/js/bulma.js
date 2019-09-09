@@ -1,18 +1,19 @@
 //The following code is based off a toggle menu by @Bradcomp
 //source: https:gist.github.com/Bradcomp/a9ef2ef322a8e8017443b626208999c1
-/*(function() {
+(function() {
 	var burger = document.querySelector('.burger');
 	var menu = document.querySelector('#'+burger.dataset.target);
 	burger.addEventListener('click', function() {
 		burger.classList.toggle('is-active');
 		menu.classList.toggle('is-active');
 	});
-});*/
-document.querySelector('#SearchCard').oninput = function () {
+});
+
+document.querySelector('#card').oninput = function () {
 	let val = this.value.trim();
-	let SearchCardItems = document.querySelectorAll('.SearchCard');
+	let cardItems = document.querySelectorAll('.card');
 	if (val != '') {
-		SearchCardItems.forEach(function (element) {
+		cardItems.forEach(function (element) {
 			if (element.innerText.search(val) == -1) {
 				element.classList.add('hide');
 			} else {
@@ -20,7 +21,7 @@ document.querySelector('#SearchCard').oninput = function () {
 			}
 		});
 	} else {
-		SearchCardItems.forEach(function (element){
+		cardItems.forEach(function (element){
 			element.classList.remove('hide');
 		});
 	}
