@@ -1,11 +1,11 @@
-document.querySelector('#card').oninput = function () {
+document.querySelector("#column").oninput = function() {
   let val = this.value.trim();
-  let cardItems = document.querySelectorAll('.card');
-  cardItems.forEach(function (element) {
-    if ((val !== '') && (element.innerText.search(val) === -1)) {
-      element.classList.add('hide');
+  let columnItems = document.querySelectorAll(".column");
+  columnItems.forEach(function(element) {
+    if (val !== "" && element.innerText.search(val) === -1) {
+      element.classList.add("hide");
     } else {
-      element.classList.remove('hide');
+      element.classList.remove("hide");
     }
   });
-}
+};

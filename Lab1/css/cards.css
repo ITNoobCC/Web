@@ -126,13 +126,13 @@ strong {
 }
 
 ::selection {
-  background-color: #DEF4FF;
+  background-color: #def4ff;
 }
 
-.card.large.hide {
+.column.large.hide {
   display: none;
 }
 
-.card.hide {
+.column.hide {
   display: none;
 }
