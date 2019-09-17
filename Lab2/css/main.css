@@ -1,7 +1,8 @@
-.app{
+.app {
 	margin-top: 20px;
 }
-#title{
+
+#title {
 	background-color: darkgray;
 	width: 100%;
 	text-align: center;
@@ -9,13 +10,15 @@
 	font-size: 30px;
 	font-family: fantasy;
 }
+
 input {
 	border-radius: 5px;
 	width: 90%;
 	margin: 20px auto;
 	display: block;
 }
-.new{
+
+.new {
 	background-color: lightgray;
 	margin: 15px 0;
 	padding: 15px 40px 15px 15px;
@@ -26,13 +29,16 @@ input {
 	position: relative;
 	border-radius: 5px;
 }
-#container-to-do{
+
+#container-to-do {
 	margin: 15px 0;
 }
-.labeled{
-	text-decoration:line-through;
+
+.labeled {
+	text-decoration: line-through;
 }
-.icon{
+
+.icon {
 	cursor: pointer;
 	position: absolute;
 	right: 10px;
