@@ -389,3 +389,8 @@ html .clear-completed:active {
   color: green;
   transition: 250ms color;
 }
+
+.text {
+	text-align: center;
+	color: rgba(175, 47, 47, 0.274);
+}
