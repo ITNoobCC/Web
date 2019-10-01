@@ -1,58 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Todo app</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/portingStyles.css" />
+  </head>
 
-<head>
-  <title>Todo app</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/new.css">
-</head>
-
-<body>
-  <section class="todoapp">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1>Todo App</h1>
-          <input class="new-todo" id="textarea" placeholder="What needs to be done?">
-          <button id="button" type="submit" class="btn btn-primary add-button">Add</button>
-          <div id="container-to-do" class="todo-list"></div>
-          <div class="options-box">
-            <div class="option-section filter-section">
-              <label for="filter-show-all" class="option-button">
-                <input type="radio" id="filter-show-all" name="filter" checked class="toggle filter-btn">
-                Show All
-              </label>
-              <label for="complete-all" class="option-button">
-                  <input type="checkbox" id="complete-all" class="toggle">
-                  <span>Complete All</span>
+  <body>
+    <section class="todoapp">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>Todo App</h1>
+            <label for="complete-all" class="option-button">
+              <input type="checkbox" id="complete-all" class="toggle" />
+              <span>Complete All</span>
+            </label>
+            <input
+              class="new-todo"
+              id="textarea"
+              placeholder="What needs to be done?"
+            />
+            <button
+              id="button"
+              type="submit"
+              class="btn btn-primary add-button"
+            >
+              Add
+            </button>
+            <div id="container-to-do" class="todo-list"></div>
+            <div class="block-filtering-tasks">
+              <div class="option-section filter-section">
+                <label for="filter-show-all" class="option-button">
+                  <input
+                    type="radio"
+                    id="filter-show-all"
+                    name="filter"
+                    checked
+                    class="toggle filter-btn"
+                  />
+                  Show All
                 </label>
-              <label for="filter-show-completed" class="option-button">
-                <input type="radio" id="filter-show-completed" name="filter" class="toggle filter-btn">
-                Show complete
-              </label>
-              <label for="filter-show-removed" class="option-button">
-                <input type="radio" id="filter-show-removed" name="filter" class="toggle filter-btn">
-                Show delete
-              </label>
+                <label for="filter-show-completed" class="option-button">
+                  <input
+                    type="radio"
+                    id="filter-show-completed"
+                    name="filter"
+                    class="toggle filter-btn"
+                  />
+                  Show complete
+                </label>
+                <label for="filter-show-removed" class="option-button">
+                  <input
+                    type="radio"
+                    id="filter-show-removed"
+                    name="filter"
+                    class="toggle filter-btn"
+                  />
+                  Show delete
+                </label>
+              </div>
             </div>
           </div>
-          
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <script src="js/app.js"></script>
-  <p class = "text">Double-click to edit a todo
-  <br>
-  Created by Oscar Godson
-  <br>
-  Refactored by Christoph Burgmer
-  <br>
-  Part of TodoMVC
-  </p>
-</body>
-
+    <script src="js/app.js"></script>
+    <p class="text">
+      Double-click to edit a todo
+      <br />
+      Created by Oscar Godson
+      <br />
+      Refactored by Christoph Burgmer
+      <br />
+      Part of TodoMVC
+    </p>
+  </body>
 </html>

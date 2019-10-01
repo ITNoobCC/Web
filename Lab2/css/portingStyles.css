@@ -25,7 +25,7 @@ body {
 	font-weight: 300;
 }
 
-.options-box {
+.block-filtering-tasks {
   margin-top: 16px;
 }
 
@@ -210,7 +210,7 @@ body {
 	transition: color 0.4s;
 }
 
- .completed label {
+ .completedTask label {
 	color: #d9d9d9;
 	text-decoration: line-through;
 }

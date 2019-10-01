@@ -3,12 +3,12 @@ window.onload = function() {
   var txtArea = document.getElementById('textarea');
 
   btn.onclick = function() {
-    if (txtArea.value != '') {
+    if (txtArea.value !== '') {
 
       var taskContent = txtArea.value;
       var containerToDo = document.getElementById('container-to-do');
       var newTask = document.createElement('div');
-      newTask.classList.add('new', 'checkbox', 'view');
+      newTask.classList.add('new-task', 'checkbox', 'view');
       containerToDo.append(newTask);
       var label = document.createElement('label');
       var check = document.createElement('input');
@@ -21,7 +21,7 @@ window.onload = function() {
       label.classList.add('task-label');
       var icon = document.createElement('i');
       icon.append('Delete');
-      icon.classList.add('glyphicon', 'glyphicon-trash', 'icon', 'remove-card');
+      icon.classList.add('glyphicon', 'glyphicon-trash', 'icon', 'remove-task');
       newTask.append(icon);
       txtArea.value = '';
 
@@ -48,7 +48,7 @@ window.onload = function() {
 
   var completeAll = document.getElementById('complete-all');
   completeAll.onclick = function() {
-    var massTaskList = document.querySelectorAll('.new');
+    var massTaskList = document.querySelectorAll('.new-task');
 
     for (let items of massTaskList) {
 
@@ -85,7 +85,7 @@ window.onload = function() {
 
   var filterShowAll = document.getElementById('filter-show-all');
   filterShowAll.onclick = function() {
-    var massTaskList = document.querySelectorAll('.new');
+    var massTaskList = document.querySelectorAll('.new-task');
 
     for (let items of massTaskList) {
       if (!items.classList.contains('deletedTask')) {
@@ -98,7 +98,7 @@ window.onload = function() {
 
   var filterShowCompleted = document.getElementById('filter-show-completed');
   filterShowCompleted.onclick = function() {
-    var massTaskList = document.querySelectorAll('.new');
+    var massTaskList = document.querySelectorAll('.new-task');
 
     for (let items of massTaskList) {
       if (!items.classList.contains('deletedTask') && items.classList.contains('completedTask')) {
@@ -111,7 +111,7 @@ window.onload = function() {
 
   var filterShowRemoved = document.getElementById('filter-show-removed');
   filterShowRemoved.onclick = function() {
-    var massTaskList = document.querySelectorAll('.new');
+    var massTaskList = document.querySelectorAll('.new-task');
 
     for (let items of massTaskList) {
       if (items.classList.contains('deletedTask')) {
