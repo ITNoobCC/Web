@@ -1,71 +1,71 @@
 .app {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 #title {
-	background-color: darkgray;
-	width: 100%;
-	text-align: center;
-	padding: 15px 0;
-	font-size: 30px;
-	font-family: fantasy;
+  background-color: darkgray;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 30px;
+  font-family: fantasy;
 }
 
 input {
-	border-radius: 5px;
-	/* width: 90%; */
-	margin: 20px auto;
-	display: block;
+  border-radius: 5px;
+  /* width: 90%; */
+  margin: 20px auto;
+  display: block;
 }
 
 .new-task {
-	background-color: lightgray;
-	margin: 15px 0;
-	padding: 15px 40px 15px 15px;
-	width: 100%;
-	display: block;
-	height: auto;
-	word-wrap: break-word;
-	position: relative;
-	border-radius: 5px;
+  background-color: lightgray;
+  margin: 15px 0;
+  padding: 15px 40px 15px 15px;
+  width: 100%;
+  display: block;
+  height: auto;
+  word-wrap: break-word;
+  position: relative;
+  border-radius: 5px;
 }
 
 .block-filtering-tasks {
-	margin-top: 15px;
-	padding: 15px 40px 0 15px;
-	overflow: hidden;
+  margin-top: 15px;
+  padding: 15px 40px 0 15px;
+  overflow: hidden;
 }
 
 #container-to-do {
-	margin: 15px 0;
+  margin: 15px 0;
 }
 
 .icon {
-	cursor: pointer;
-	position: absolute;
-	right: 10px;
-	top: 40%;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 40%;
 }
 
 .option-button {
-	float: left;
-	margin-right: 16px;
+  float: left;
+  margin-right: 16px;
 }
 
 .option-button input {
-	margin-right: 4px;
-	float: left;
+  margin-right: 4px;
+  float: left;
 }
 
 .option-section {
-	float: left;
-	margin-right: 16px;
+  float: left;
+  margin-right: 16px;
 }
 
 .completedTask {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .deletedTast {
-	display: none;
+  display: none;
 }
