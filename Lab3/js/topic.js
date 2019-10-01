@@ -1,19 +1,12 @@
 window.onload = function() {
-  var blackWhite = document.getElementById('blackWhite');
-  let head = document.head, link = document.createElement('link');
-  link.rel = 'stylesheet';
-
+  var blackWhite = document.getElementById('black-white');
   blackWhite.onclick = function() {
-    if (blackWhite.checked == true)
-    {
-        link.href = 'css/style.css';
-        head.appendChild(link);
-    }
-    else
-    {
-        link.href = 'css/whiteStyle.css';
-        head.appendChild(link);
+    if (blackWhite.checked == true) {
+      var darkTopic = document.getElementById('calendar');
+      darkTopic.classList.remove("dark-topic");
+    } else {
+      var darkTopic = document.getElementById('calendar');
+      darkTopic.classList.toggle("dark-topic");
     }
   };
-
-}
+};

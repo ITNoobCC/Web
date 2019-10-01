@@ -1,78 +1,62 @@
-* {
-  box-sizing: border-box;
-}
-
-ul {
-  list-style-type: none;
-}
-body {
-  background :  #000000;
-  color: white;
+#calendar {
+  width: 100%;
+  height: 100vh;
   font-family: Verdana, sans-serif;
 }
 
-.month {
-  padding: 70px 25px;
-  width: 100%;
-  background: #181818;
-  text-align: center;
-}
-.monthTopic {
-    background: #181818;
-    color: white;
+table.borderStyle {
+  border-spacing: 0px;
+  text-align: right;
 }
 
-.month ul {
-  margin: 0;
-  padding: 0;
+td {
+  padding: 5px 5px 55px 70px;
+  border: solid;
+  border-width: 0.1px;
+}
+td.borderNone {
+  padding: 20px 5px 0px 0px;
+  border: none;
 }
 
-.month ul li {
-  color: white;
+.marginCaption {
+  margin: 10px 0 -15px 2px;
   font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
 }
 
-.weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color: rgb(19, 19, 19);
-}
-
-.weekdays li {
-  display: inline-block;
-  width: 13.6%;
-  color: rgb(255, 255, 255);
-  text-align: center;
-}
-
-.days {
-  padding: 10px 0;
-  background: rgb(7, 7, 7);
-  margin: 0;
-}
-
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size: 12px;
-  color: #777;
-}
-
-.days li .active {
+p.holiday {
   padding: 5px;
+  margin: 0;
+  background: #ff00ff;
+  color: white !important;
+  border-radius: 10px;
+}
+
+p.active {
+  padding: 5px;
+  margin: 0;
   background: #033ff5;
   color: white !important;
   border-radius: 100px;
 }
 
-.days li .holiday {
-    padding: 5px;
-    background: #ff00ff;
-    color: white !important;
-    border-radius: 10px;
-  }
+.dark-topic {
+  background: black;
+  color: white;
+}
+
+.dark-topic .active {
+  padding: 5px;
+  margin: 0;
+  background: #00ff9d;
+  color: black !important;
+  border-radius: 100px;
+}
+
+.dark-topic .holiday {
+  padding: 5px;
+  margin: 0;
+  background: #ff8800;
+  color: black !important;
+  border-radius: 10px;
+}
