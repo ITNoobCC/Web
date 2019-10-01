@@ -34,16 +34,6 @@ body {
   letter-spacing: 3px;
 }
 
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
-
-.month .next {
-  float: right;
-  padding-top: 10px;
-}
-
 .weekdays {
   margin: 0;
   padding: 10px 0;

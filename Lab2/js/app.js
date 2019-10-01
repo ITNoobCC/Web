@@ -26,22 +26,22 @@ window.onload = function() {
       txtArea.value = '';
 
       check.onclick = function() {
-        if (!label.parentElement.classList.contains('deleted')) {
-          label.classList.toggle('completed');
-          label.parentElement.classList.toggle('completed');
+        if (!label.parentElement.classList.contains('deletedTask')) {
+          label.classList.toggle('completedTask');
+          label.parentElement.classList.toggle('completedTask');
         } else {
-          label.classList.remove('completed');
-          label.parentElement.classList.remove('completed');
+          label.classList.remove('completedTask');
+          label.parentElement.classList.remove('completedTask');
           label.children[0].checked = false;
         }
       };
 
       icon.onclick = function(element) {
-        if (!element.currentTarget.parentElement.classList.contains('deleted')) {
+        if (!element.currentTarget.parentElement.classList.contains('deletedTask')) {
           element.currentTarget.parentElement.style.display = 'none';
         }
 
-        element.currentTarget.parentElement.classList.add('deleted');
+        element.currentTarget.parentElement.classList.add('deletedTask');
       };
     }
   };
@@ -52,32 +52,32 @@ window.onload = function() {
 
     for (let items of massTaskList) {
 
-      if (!items.classList.contains('deleted') && completeAll.checked) {
-        items.classList.add('completed');
+      if (!items.classList.contains('deletedTask') && completeAll.checked) {
+        items.classList.add('completedTask');
       } else {
-        items.classList.remove('completed');
+        items.classList.remove('completedTask');
       }
 
       let taskLabel = items.children[0];
       let taskCheck = taskLabel.children[0];
 
-      if (items.classList.contains('completed')) {
-        taskLabel.classList.add('completed');
+      if (items.classList.contains('completedTask')) {
+        taskLabel.classList.add('completedTask');
         taskCheck.checked = true;
       } else {
-        taskLabel.classList.remove('completed');
+        taskLabel.classList.remove('completedTask');
         taskCheck.checked = false;
       }
 
       taskCheck.onclick = function(element) {
         completeAll.checked = false;
 
-        if (element.target.parentElement.classList.contains('completed')) {
-          element.target.parentElement.classList.remove('completed');
-          element.target.parentElement.parentElement.classList.remove('completed');
+        if (element.target.parentElement.classList.contains('completedTask')) {
+          element.target.parentElement.classList.remove('completedTask');
+          element.target.parentElement.parentElement.classList.remove('completedTask');
         } else {
-          element.target.parentElement.classList.add('completed');
-          element.target.parentElement.parentElement.classList.add('completed');
+          element.target.parentElement.classList.add('completedTask');
+          element.target.parentElement.parentElement.classList.add('completedTask');
         }
       };
     }
@@ -88,7 +88,7 @@ window.onload = function() {
     var massTaskList = document.querySelectorAll('.new');
 
     for (let items of massTaskList) {
-      if (!items.classList.contains('deleted')) {
+      if (!items.classList.contains('deletedTask')) {
         items.style.display = 'block';
       } else {
         items.style.display = 'none';
@@ -101,7 +101,7 @@ window.onload = function() {
     var massTaskList = document.querySelectorAll('.new');
 
     for (let items of massTaskList) {
-      if (!items.classList.contains('deleted') && items.classList.contains('completed')) {
+      if (!items.classList.contains('deletedTask') && items.classList.contains('completedTask')) {
         items.style.display = 'block';
       } else {
         items.style.display = 'none';
@@ -114,7 +114,7 @@ window.onload = function() {
     var massTaskList = document.querySelectorAll('.new');
 
     for (let items of massTaskList) {
-      if (items.classList.contains('deleted')) {
+      if (items.classList.contains('deletedTask')) {
         items.style.display = 'block';
       } else {
         items.style.display = 'none';

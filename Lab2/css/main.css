@@ -40,10 +40,6 @@ input {
 	margin: 15px 0;
 }
 
-.completed {
-	text-decoration: line-through;
-}
-
 .icon {
 	cursor: pointer;
 	position: absolute;
@@ -61,11 +57,15 @@ input {
 	float: left;
 }
 
-.deleted {
-	display: none;
-}
-
 .option-section {
 	float: left;
 	margin-right: 16px;
+}
+
+.completedTask {
+	text-decoration: line-through;
+}
+
+.deletedTast {
+	display: none;
 }
