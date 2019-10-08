@@ -106,3 +106,6 @@ b.date {
   color: rgb(196, 196, 196);
   margin: -20px 5px 0 0;
 }
+p.highlihhted-state {
+  background: rgb(106, 106, 255);
+}
