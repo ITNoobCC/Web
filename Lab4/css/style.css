@@ -5,15 +5,22 @@ body {
 
 #logo {
   display: flex;
+  float: left;
   widows: 10px;
 }
 
-a.logo {
+#logo img {
+  width: 70px;
+  height: 50px;
+}
+
+a.basket {
   display: flex;
   justify-content: flex-end;
   margin: 1% 0 0 80%;
   background: rgb(34, 34, 34);
   padding: 10px;
+  float: left;
 }
 
 a:link {
@@ -28,7 +35,7 @@ a:hover {
   font-size: 16px;
 }
 
-#navigation-panel {
+.navigation-panel {
   display: flex;
   flex-direction: column;
   margin: 1.7% 0 0 0;
@@ -39,11 +46,15 @@ a:hover {
   float: left;
 }
 
-#goods-block {
+.navigation-panel a::before {
+  content: "- ";
+}
+
+.product-block {
   margin: 0 0 0 20%;
 }
 
-#goods {
+.product {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,7 +71,7 @@ img.goods {
   height: 100px;
 }
 
-#goods-description {
+.product-img {
   display: flex;
   flex-direction: row;
   width: 80%;
@@ -79,33 +90,45 @@ img.goods-description {
 
 /*Total Commander style*/
 
-#global-block {
-  float: left;
-  margin: 0 30px 0 0;
-}
-
-#total-commander {
-  display: flex;
-  flex-direction: column;
-  background: rgb(255, 255, 255);
-  width: 225px;
-  height: 200px;
-  margin-top: 5px;
-}
-
-#date {
-  display: flex;
-  flex-direction: column;
+.left-block {
+  width: 47%;
+  height: 85vh;
+  background: rgb(219, 219, 219);
   color: black;
-  margin: -20px 0 0 0;
+  float: left;
+  margin: 10px 10px 0 0;
 }
 
-b.date {
+.left-input {
   display: flex;
-  justify-content: flex-end;
-  color: rgb(196, 196, 196);
-  margin: -20px 5px 0 0;
 }
-p.highlihhted-state {
+
+.right-block {
+  width: 47%;
+  height: 85vh;
+  background: rgb(219, 219, 219);
+  color: black;
+  float: left;
+  margin: 10px 0px 0 0;
+}
+
+.right-input {
+  display: flex;
+  margin: -21px 0 0 0;
+}
+
+table {
+  border-spacing: 0;
+}
+
+td.date-type {
+  width: 100%;
+  text-align: right;
+  color: rgb(99, 99, 99);
+  margin: -20px 5px 0 0;
+  padding: 0 10px 0 0;
+}
+
+tr.active {
   background: rgb(106, 106, 255);
 }

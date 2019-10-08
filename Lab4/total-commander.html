@@ -14,71 +14,94 @@
   </head>
 
   <body>
-    <article>
-      <p>Total Commander for web</p>
-      <div id="global-block">
-        <section>
-          <input
-            id="textarea"
-            placeholder="C:\Documents And Settings\user"
-            size="30"
-          />
-        </section>
-        <div id="total-commander">
-          <section>
-            <div id="date">
-              <p>...</p>
-            </div>
-          </section>
-          <section>
-            <div id="date">
-              <p>file1 <b class="date">100kb</b></p>
-            </div>
-          </section>
-          <section>
-            <div id="date">
-              <p class = "highlihhted-state">folder <b class="date">folder</b></p>
-            </div>
-          </section>
-          <section>
-            <div id="date">
-              <p>.git <b class="date">folder</b></p>
-            </div>
-          </section>
-          <section>
-            <div id="date">
-              <p>film.move <b class="date">2,5gb</b></p>
-            </div>
-          </section>
-        </div>
-      </div>
-      <div id="global-block">
-        <section>
-          <input id="textarea" placeholder="C:\" size="30" />
-        </section>
-        <div id="total-commander">
-          <section>
-            <div id="date">
-              <p>...</p>
-            </div>
-          </section>
-          <section>
-            <div id="date">
-              <p>windows <b class="date">folder</b></p>
-            </div>
-          </section>
-          <section>
-            <div id="date">
-              <p>system32 <b class="date">folder</b></p>
-            </div>
-          </section>
-          <section>
-            <div id="date">
-              <p>log.txt <b class="date">1kb</b></p>
-            </div>
-          </section>
-        </div>
-      </div>
-    </article>
+    <p>Total Commander for web</p>
+    <input
+      class="left-input"
+      id="textarea"
+      placeholder="C:\Documents And Settings\user"
+      size="30"
+    />
+    <div class="left-block">
+      <table>
+        <tr>
+          <td>
+            ...
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            file1
+          </td>
+          <td class = "date-type">
+            100kb
+          </td>
+        </tr>
+
+        <tr class = "active">
+          <td>
+            folder
+          </td>
+          <td class = "date-type">
+            folder
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            .git
+          </td>
+          <td class = "date-type">
+            folder
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            film.move
+          </td>
+          <td class = "date-type">
+            2,5gb
+          </td>
+        </tr>
+      </table>
+    </div>
+    <input id="textarea" placeholder="C:\" size="30" class="right-input" />
+    <div class="right-block">
+      <table>
+        <tr>
+          <td>
+            ...
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            windows
+          </td>
+          <td class = "date-type">
+            folder
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            system32
+          </td>
+          <td class = "date-type">
+            folder
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            log.txt
+          </td>
+          <td class = "date-type">
+            1kb
+          </td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
