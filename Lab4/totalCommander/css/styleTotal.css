@@ -1,0 +1,41 @@
+.left-block {
+    width: 47%;
+    height: 85vh;
+    background: rgb(219, 219, 219);
+    color: black;
+    float: left;
+    margin: 10px 10px 0 0;
+  }
+  
+  .left-input {
+    display: flex;
+  }
+  
+  .right-block {
+    width: 47%;
+    height: 85vh;
+    background: rgb(219, 219, 219);
+    color: black;
+    float: left;
+    margin: 10px 0px 0 0;
+  }
+  
+  .right-input {
+    display: flex;
+  }
+  
+  table {
+    border-spacing: 0;
+  }
+  
+  td.data-type {
+    width: 100%;
+    text-align: right;
+    color: rgb(99, 99, 99);
+    margin: -20px 5px 0 0;
+    padding: 0 10px 0 0;
+  }
+  
+  tr.active {
+    background: rgb(106, 106, 255);
+  }

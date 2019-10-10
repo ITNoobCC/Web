@@ -35,7 +35,7 @@ a:hover {
   font-size: 16px;
 }
 
-.navigation-panel {
+.navigation-block {
   display: flex;
   flex-direction: column;
   margin: 1.7% 0 0 0;
@@ -43,6 +43,12 @@ a:hover {
   padding: 10px;
   width: 15%;
   height: 100%;
+  float: left;
+}
+
+.navigation-panel {
+  display: flex;
+  flex-direction: column;
   float: left;
 }
 
@@ -66,7 +72,7 @@ a:hover {
   float: left;
 }
 
-img.goods {
+img.product {
   width: 100px;
   height: 100px;
 }
@@ -82,53 +88,8 @@ img.goods {
   text-align: justify;
 }
 
-img.goods-description {
+img.product-img {
   width: 300px;
   height: 300px;
   margin: 0 3% 0 0;
-}
-
-/*Total Commander style*/
-
-.left-block {
-  width: 47%;
-  height: 85vh;
-  background: rgb(219, 219, 219);
-  color: black;
-  float: left;
-  margin: 10px 10px 0 0;
-}
-
-.left-input {
-  display: flex;
-}
-
-.right-block {
-  width: 47%;
-  height: 85vh;
-  background: rgb(219, 219, 219);
-  color: black;
-  float: left;
-  margin: 10px 0px 0 0;
-}
-
-.right-input {
-  display: flex;
-  margin: -21px 0 0 0;
-}
-
-table {
-  border-spacing: 0;
-}
-
-td.date-type {
-  width: 100%;
-  text-align: right;
-  color: rgb(99, 99, 99);
-  margin: -20px 5px 0 0;
-  padding: 0 10px 0 0;
-}
-
-tr.active {
-  background: rgb(106, 106, 255);
 }
