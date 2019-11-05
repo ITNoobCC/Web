@@ -11,5 +11,5 @@ function isTimeRangesIntersect(timeRange1, timeRange2) {
   }
 }
 
-console.log(isTimeRangesIntersect(['18:30', '19:30'], ['19:30', '21:00'])); // return true
+console.log(isTimeRangesIntersect(['18:30', '19:30'], ['19:00', '21:00'])); // return true
 console.log(isTimeRangesIntersect(['08:30', '09:30'], ['10:30', '12:00'])); // return false
