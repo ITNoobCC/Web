@@ -1,81 +1,95 @@
-var solider1 = {
-  name: 'Solider1',
+var playerOne = {
+  name: 'Player one',
   health: 100,
   currentCoordinates: { x: 0, y: 0 },
   shot: function(x, y) {
     console.log('Выстрел 1 игрока: ', x, y);
   },
   spawn: function(x, y) {
-    (this.currentCoordinates = x), y;
-    console.log('Spawn1:', x, y);
+    (this.currentCoordinates.x = x), (this.currentCoordinates.y = y);
+    console.log('Spawn player one:', x, y);
+  },
+  checkDamage: function() {
+    if (playerTwo.health > 0) {
+      for (var i = 0; i < 25; i++) {
+        playerTwo.health--;
+      }
+    }
   }
 };
-var solider2 = {
-  name: 'Solider2',
+var playerTwo = {
+  name: 'Player two',
   health: 100,
   currentCoordinates: { x: 0, y: 0 },
   shot: function(x, y) {
     console.log('Выстрел 2 игрока: ', x, y);
   },
   spawn: function(x, y) {
-    (this.currentCoordinates = x), y;
-    console.log('Spawn2:', x, y);
+    (this.currentCoordinates.x = x), (this.currentCoordinates.y = y);
+    console.log('Spawn player two:', x, y);
+  },
+  checkDamage: function() {
+    if (playerOne.health > 0) {
+      for (var i = 0; i < 25; i++) {
+        playerOne.health--;
+      }
+    }
   }
 };
-var solider1SpawnX;
-var solider1SpawnY;
-var solider2SpawnX;
-var solider2SpawnY;
 
 function spawnSolider() {
-  do {
-    solider1SpawnX = Math.floor(Math.random() * 3);
-    solider1SpawnY = Math.floor(Math.random() * 3);
+  var playerOneSpawnX;
+  var playerOneSpawnY;
+  var playerTwoSpawnX;
+  var playerTwoSpawnY;
 
-    solider2SpawnX = Math.floor(Math.random() * 3);
-    solider2SpawnY = Math.floor(Math.random() * 3);
+  do {
+    playerOneSpawnX = Math.floor(Math.random() * 3);
+    playerOneSpawnY = Math.floor(Math.random() * 3);
+
+    playerTwoSpawnX = Math.floor(Math.random() * 3);
+    playerTwoSpawnY = Math.floor(Math.random() * 3);
   } while (
-    solider1SpawnX == solider2SpawnX &&
-    solider1SpawnY == solider2SpawnY
+    playerOneSpawnX === playerTwoSpawnX &&
+    playerOneSpawnY === playerTwoSpawnY
   );
-  solider1.spawn(solider1SpawnX, solider1SpawnY);
-  solider2.spawn(solider2SpawnX, solider2SpawnY);
+  playerOne.spawn(playerOneSpawnX, playerOneSpawnY);
+  playerTwo.spawn(playerTwoSpawnX, playerTwoSpawnY);
 }
+
 spawnSolider();
 setInterval(function() {
   do {
-    var solider1ShotX = Math.floor(Math.random() * 3);
-    var solider1ShotY = Math.floor(Math.random() * 3);
-  } while (solider1ShotX == solider1SpawnX && solider1ShotY == solider1SpawnY);
+    var playerOneShotX = Math.floor(Math.random() * 3);
+    var playerOneShotY = Math.floor(Math.random() * 3);
+  } while (playerOneShotX === playerOne.currentCoordinates.x && playerOneShotY === playerOne.currentCoordinates.y);
   do {
-    var solider2ShotX = Math.floor(Math.random() * 3);
-    var solider2ShotY = Math.floor(Math.random() * 3);
-  } while (solider2ShotX == solider2SpawnX && solider2ShotY == solider2SpawnY);
+    var playerTwoShotX = Math.floor(Math.random() * 3);
+    var playerTwoShotY = Math.floor(Math.random() * 3);
+  } while (playerTwoShotX === playerTwo.currentCoordinates.x && playerTwoShotY === playerTwo.currentCoordinates.y);
 
-  solider1.shot(solider1ShotX, solider1ShotY);
-  solider2.shot(solider2ShotX, solider2ShotY);
+  playerOne.shot(playerOneShotX, playerOneShotY);
+  playerTwo.shot(playerTwoShotX, playerTwoShotY);
 
-  if (solider1ShotX == solider2SpawnX && solider1ShotY == solider2SpawnY) {
-    if (solider2.health > 0) {
-      for (var i = 0; i < 25; i++) {
-        solider2.health--;
-      }
-    }
+  if (
+    playerOneShotX === playerTwo.currentCoordinates.x &&
+    playerOneShotY === playerTwo.currentCoordinates.y
+  ) {
+    playerOne.checkDamage();
   }
 
-  if (solider2ShotX == solider1SpawnX && solider2ShotY == solider1SpawnY) {
-    if (solider1.health > 0) {
-      for (var i = 0; i < 25; i++) {
-        solider1.health--;
-      }
-    }
+  if (
+    playerTwoShotX === playerOne.currentCoordinates.x &&
+    playerTwoShotY === playerOne.currentCoordinates.y
+  ) {
+    playerTwo.checkDamage();
   }
-  if (solider2.health == 0) {
-    console.log('Победил - ', solider1.name);
-    console.log('Проиграл - ', solider2.name);
-  } else if (solider1.health == 0) {
-    console.log('Победил - ', solider2.name);
-    console.log('Проиграл - ', solider1.name);
+  if (playerTwo.health === 0) {
+    console.log('Победил - ', playerOne.name);
+    console.log('Проиграл - ', playerTwo.name);
+  } else if (playerOne.health === 0) {
+    console.log('Победил - ', playerTwo.name);
+    console.log('Проиграл - ', playerOne.name);
   }
-  clearInterval(solider1.health == 0 || solider2.health == 0);
+  clearInterval(playerOne.health === 0 || playerTwo.health === 0);
 }, 100);

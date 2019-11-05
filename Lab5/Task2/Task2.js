@@ -1,32 +1,24 @@
 var cashbox = {
   amount: 0,
-  addPayment: function(payment, info) {
-    if (payment < 0 || info === "") {
-      console.log("Ошибка ввода!");
+  addPayment: function(payment) {
+    if (payment.amount > 0 && typeof payment.amount === 'number') {
+      this.amount += payment.amount;
+      console.log(payment.info + ': ' + payment.amount);
     } else {
-      for (var i = 0; i < payment; i++) {
-        this.amount++;
-      }
-      console.log(info, ": ", payment);
+      console.log('Ошибка ввода!');
     }
   },
-  refundPayment: function(refund, info) {
-    if (refund < 0) {
-      console.log("Ошибка ввода!");
+  refundPayment: function(refund) {
+    if (this.amount > 0 && this.amount - refund.amount >= 0 && typeof refund.amount === 'number') {
+      this.amount -= refund.amount;
+      console.log(refund.info + ': ' + refund.amount);
     } else {
-      for (var i = 0; i < refund; i++) {
-        this.amount--;
-      }
-      if (this.amount < 0) {
-        console.log("Ошибка, в кассе недостаточно средств!");
-        for (var i = 0; i < refund; i++) {
-          this.amount++;
-        }
-        console.log("В кассе сейчас: ", this.amount);
-      } else {
-        console.log(info, ": ", refund);
-        console.log("Остаток в кассе: ", this.amount);
-      }
+      console.log('В кассе недостаточно средств!');
     }
   }
 };
+
+cashbox.addPayment({ amount: -10, info: 'Оплата штрафа' });
+cashbox.addPayment({ amount: 10, info: 'Оплата ЖКХ' });
+cashbox.refundPayment({ amount: 10, info: 'Возврат клиенту' });
+cashbox.refundPayment({ amount: 10, info: 'Возврат клиенту' });
