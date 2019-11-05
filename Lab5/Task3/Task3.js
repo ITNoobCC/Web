@@ -4,17 +4,17 @@ function pulloutArray(array) {
     if (Array.isArray(array[i])) {
       for (var j = 0; j < array[i].length; j++) {
         if (
-          array[i][j] !== null &&
           Number.isNaN(array[i][j]) === false &&
-          typeof array[i][j] !== 'string'
+          typeof array[i][j] !== 'string' &&
+          array[i][j] !== null
         ) {
           resultArray.push(array[i][j]);
         }
       }
     } else if (
-      array[i] !== null &&
       Number.isNaN(array[i]) === false &&
-      typeof array[i] !== 'string'
+      typeof array[i] !== 'string' &&
+      array[i] !== null
     ) {
       resultArray.push(array[i]);
     }
