@@ -1,8 +1,7 @@
 window.onload = function() {
-  var btn = document.getElementById('chat-block_button-send');
+  var btn = document.getElementById('control-panel_button-send');
   var txtArea = document.getElementById('textarea');
-  var userTag = document.getElementById('chat-block_user-tag');
-  var flagUser = 1;
+  var userTag = document.getElementById('control-panel_user-tag');
 
   function chatUI() {
     if (txtArea.value !== '') {
@@ -10,9 +9,9 @@ window.onload = function() {
       var chatBlock = document.getElementById('chat-block');
       var newMessageBlock = document.createElement('div');
       var textMessage = document.createElement('p');
-
+      textMessage.classList.add('you-message_text');
       textMessage.append(messageContent);
-      if (userTag.checked == true) {
+      if (userTag.checked === true) {
         newMessageBlock.classList.add('you-message');
       } else {
         newMessageBlock.classList.add('his-message');

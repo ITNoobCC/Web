@@ -4,23 +4,28 @@
   "description": "",
   "main": "index.js",
   "watch": {
-    "validate-html": "Lab6\\chatroom\\index.html",
-    "validate-css": "Lab6\\chatroom\\css\\style.css",
-    "jshint": "Lab6\\chatroom\\js\\chat.js"
+    "validate-html": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "html",
+      "quiet": true,
+      "legacyWatch": true
+    },
+    "validate-css": "src/css/styles.css",
+    "jshint": "src/"
   },
   "scripts": {
-    "server": "live-server index.html",
-    "validate-html": "html-validate index.html",
-    "validate-css": "css-validator style.css",
-    "jshint": "jshint main.js",
+    "server": "live-server src",
+    "validate-html": "html-validate src",
+    "validate-css": "css-validator src/css/styles.css",
+    "jshint": "jshint src/",
     "watch": "npm-watch",
-    "dev-mode": "npm-run-all --parallel server watch",
     "postinstall": "npm i -g live-server css-validator html-validate jshint"
   },
   "author": "Kalagin Ivan",
   "license": "ISC",
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
     "npm-watch": "^0.6.0"
   }
 }
