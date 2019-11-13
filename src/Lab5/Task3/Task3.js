@@ -1,24 +1,32 @@
 function pulloutArray(array) {
-  var resultArray = [];
-  for (var i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      for (var j = 0; j < array[i].length; j++) {
-        if (
-          Number.isNaN(array[i][j]) === false &&
-          typeof array[i][j] !== 'string' &&
-          array[i][j] !== null
-        ) {
-          resultArray.push(array[i][j]);
+
+  if (Array.isArray(array)) {
+    var resultArray = [];
+
+    for (var i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        for (var j = 0; j < array[i].length; j++) {
+          if (
+            typeof array[i][j] === 'number' &&
+            !isNaN(array[i][j]) &&
+            array[i][j] !== null
+          ) {
+            resultArray.push(array[i][j]);
+          }
+          // console.log(array[i][j]);
         }
+      } else if (
+        typeof array[i] === 'number' &&
+        !isNaN(array[i]) &&
+        array[i] !== null
+      ) {
+        resultArray.push(array[i]);
       }
-    } else if (
-      Number.isNaN(array[i]) === false &&
-      typeof array[i] !== 'string' &&
-      array[i] !== null
-    ) {
-      resultArray.push(array[i]);
     }
+  } else {
+    return null;
   }
+
   return resultArray;
 }
 

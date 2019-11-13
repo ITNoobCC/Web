@@ -9,10 +9,15 @@ var playerOne = {
     (this.currentCoordinates.x = x), (this.currentCoordinates.y = y);
     console.log('Spawn player one:', x, y);
   },
-  checkDamage: function() {
-    if (playerTwo.health > 0) {
-      for (var i = 0; i < 25; i++) {
-        playerTwo.health--;
+  checkDamage: function(playerTwoShotX, playerTwoShotY) {
+    if (
+      playerTwoShotX === playerOne.currentCoordinates.x &&
+      playerTwoShotY === playerOne.currentCoordinates.y
+    ) {
+      if (playerOne.health > 0) {
+        for (var i = 0; i < 25; i++) {
+          playerOne.health--;
+        }
       }
     }
   }
@@ -28,10 +33,15 @@ var playerTwo = {
     (this.currentCoordinates.x = x), (this.currentCoordinates.y = y);
     console.log('Spawn player two:', x, y);
   },
-  checkDamage: function() {
-    if (playerOne.health > 0) {
-      for (var i = 0; i < 25; i++) {
-        playerOne.health--;
+  checkDamage: function(playerOneShotX, playerOneShotY) {
+    if (
+      playerOneShotX === playerTwo.currentCoordinates.x &&
+      playerOneShotY === playerTwo.currentCoordinates.y
+    ) {
+      if (playerTwo.health > 0) {
+        for (var i = 0; i < 25; i++) {
+          playerTwo.health--;
+        }
       }
     }
   }
@@ -63,27 +73,18 @@ setInterval(function() {
     var playerOneShotX = Math.floor(Math.random() * 3);
     var playerOneShotY = Math.floor(Math.random() * 3);
   } while (playerOneShotX === playerOne.currentCoordinates.x && playerOneShotY === playerOne.currentCoordinates.y);
+
   do {
     var playerTwoShotX = Math.floor(Math.random() * 3);
     var playerTwoShotY = Math.floor(Math.random() * 3);
   } while (playerTwoShotX === playerTwo.currentCoordinates.x && playerTwoShotY === playerTwo.currentCoordinates.y);
 
   playerOne.shot(playerOneShotX, playerOneShotY);
+  playerTwo.checkDamage(playerOneShotX, playerOneShotY);
+
   playerTwo.shot(playerTwoShotX, playerTwoShotY);
+  playerOne.checkDamage(playerTwoShotX, playerTwoShotY);
 
-  if (
-    playerOneShotX === playerTwo.currentCoordinates.x &&
-    playerOneShotY === playerTwo.currentCoordinates.y
-  ) {
-    playerOne.checkDamage();
-  }
-
-  if (
-    playerTwoShotX === playerOne.currentCoordinates.x &&
-    playerTwoShotY === playerOne.currentCoordinates.y
-  ) {
-    playerTwo.checkDamage();
-  }
   if (playerTwo.health === 0) {
     console.log('Победил - ', playerOne.name);
     console.log('Проиграл - ', playerTwo.name);

@@ -1,20 +1,29 @@
 function check(data, expectedType) {
-  try {
-    if (expectedType === 'array' && Array(data).isArray()) {
-      console.log(true);
-    } else if (expectedType === 'number' && Array(data).isArray()) {
-      console.log(true);
-    } else if (expectedType === 'null' && !data) {
-      console.log(true);
-    } else if (expectedType === 'string' && typeof data == 'string') {
-      console.log(true);
-    }
-  } catch {
-    console.log(false);
+  if (!data && data !== null) {
+    throw new Error('Ошибка');
+  }
+  
+  if (!expectedType) {
+    throw new Error('Ошибка');
+  }
+
+  if (
+    typeof data === expectedType &&
+    !(data === null && expectedType === 'object')
+  ) {
+    return true;
+  } else if (data === null && expectedType === 'null') {
+    return true;
+  } else {
+    throw new Error('Ошибка');
   }
 }
 
-check([], 'number');
-check([], 'array');
-check(null, 'null');
-check('test', 'string');
+try {
+  console.log(check([], 'number'));
+  console.log(check([], 'array'));
+  console.log(check(null, 'null'));
+  console.log(check('test', 'string'));
+} catch (error) {
+  console.log(error);
+}

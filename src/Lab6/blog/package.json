@@ -1,0 +1,31 @@
+{
+  "name": "npm-automation-env",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "validate-html": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "html",
+      "quiet": true,
+      "legacyWatch": true
+    },
+    "validate-css": "src/Lab6/blog/css/styles.css",
+    "jshint": "src/"
+  },
+  "scripts": {
+    "server": "live-server src",
+    "validate-html": "html-validate src",
+    "validate-css": "css-validator src/Lab6/blog/css/styles.css",
+    "jshint": "jshint src/",
+    "watch": "npm-watch",
+    "postinstall": "npm i -g live-server css-validator html-validate jshint"
+  },
+  "author": "Kalagin Ivan",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-watch": "^0.6.0"
+  }
+}

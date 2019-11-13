@@ -1,7 +1,7 @@
 var cashbox = {
   amount: 0,
   addPayment: function(payment) {
-    if (payment.amount > 0 && typeof payment.amount === 'number') {
+    if (payment.amount > 0 && typeof payment.amount === 'number' && typeof payment.info === 'string') {
       this.amount += payment.amount;
       console.log(payment.info + ': ' + payment.amount);
     } else {
@@ -9,11 +9,11 @@ var cashbox = {
     }
   },
   refundPayment: function(refund) {
-    if (this.amount > 0 && this.amount - refund.amount >= 0 && typeof refund.amount === 'number') {
+    if (this.amount > 0 && this.amount - refund.amount >= 0 && typeof refund.amount === 'number' && typeof refund.info === 'string') {
       this.amount -= refund.amount;
       console.log(refund.info + ': ' + refund.amount);
     } else {
-      console.log('В кассе недостаточно средств!');
+      console.log('Ошибка ввода!');
     }
   }
 };

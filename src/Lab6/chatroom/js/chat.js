@@ -9,12 +9,14 @@ window.onload = function() {
       var chatBlock = document.getElementById('chat-block');
       var newMessageBlock = document.createElement('div');
       var textMessage = document.createElement('p');
-      textMessage.classList.add('you-message_text');
-      textMessage.append(messageContent);
       if (userTag.checked === true) {
         newMessageBlock.classList.add('you-message');
+        textMessage.classList.add('you-message_text');
+        textMessage.append(messageContent);
       } else {
-        newMessageBlock.classList.add('his-message');
+        newMessageBlock.classList.add('interlocutor-message');
+        textMessage.classList.add('interlocutor-message_text');
+        textMessage.append(messageContent);
       }
       chatBlock.append(newMessageBlock);
       newMessageBlock.append(textMessage);
