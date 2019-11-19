@@ -54,3 +54,13 @@ body {
   font-size: 100%;
   border-radius: 10px;
 }
+
+.you-message_userName {
+  text-align: right;
+  margin: -2% 5% 0 0;
+}
+
+.interlocutor-message_userName {
+  text-align: right;
+  margin: -2% 5% 0 0;
+}
